@@ -1,7 +1,7 @@
 collective.simplewiki
 =====================
 
-Provides simple wiki-style linking to other content within the site.
+Provides simple wiki-style linking to other content within a Plone site.
 
 Text that is wrapped with `(())` or `[[]]` is rendered as a link.
 
@@ -70,7 +70,42 @@ Comments:
 - `((front-page))` links to the site's default front page.
 - `((front page))` links to an add form because no content item exists by that ID or title on the site.
 - `[[Welcome!]]` and `[[Welcome]]` do not match any content item by ID nor by full title, but `[[Welcome to Plone]]` links to the default front page since its title matches fully.
-  
+
+
+Installation
+------------
+
+Install collective.fancystuff by adding it to your buildout::
+
+   [buildout]
+
+    ...
+
+    eggs =
+        collective.simplewiki
+
+
+and then running "bin/buildout"
+
+
+Plone Compatibility
+-------------------
+
+This add-on has been tested with Plone 5.0 and 5.1.
+
+
+Contribute
+----------
+
+- Issue Tracker: https://github.com/collective/collective.simplewiki/issues
+- Source Code: https://github.com/collective/collective.simplewiki
+
+
+License
+-------
+
+The project is licensed under the GPLv2.
+
 
 Acknowledgements
 ----------------
