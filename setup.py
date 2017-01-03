@@ -14,10 +14,11 @@ setup(name='collective.simplewiki',
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
           "Programming Language :: Python",
+          "Framework :: Plone",
           "Framework :: Plone :: 5.0",
           "Framework :: Plone :: 5.1",
       ],
-      keywords='plone wiki',
+      keywords='Plone wiki wicked',
       author='Nathan Van Gheem',
       author_email='vangheem@gmail.com',
       url='https://github.com/collective/collective.simplewiki',
