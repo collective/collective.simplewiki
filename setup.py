@@ -33,8 +33,7 @@ setup(name='collective.simplewiki',
       ],
       extras_require={
           'test': [
-              'plone.app.testing',
-              'SQLAlchemy'
+              'plone.app.testing'
           ]
       },
       entry_points="""

@@ -124,7 +124,8 @@ class WikiTransform(ProtectTransform):
         if len(brains) > 0:
             return self.make_link(brains[0].getObject(), name)
 
-        brains = self.catalog(Title=name or id_, sort_on="created", sort_order="reverse")
+        brains = self.catalog(sortable_title=name or id_, sort_on="created",
+                              sort_order="reverse")
         if len(brains) > 0:
             return self.make_link(brains[0].getObject(), name)
 
