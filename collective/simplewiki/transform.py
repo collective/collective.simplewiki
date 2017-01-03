@@ -1,16 +1,17 @@
-from zope.interface import Interface
-from lxml.html import tostring
-from lxml.html import fromstring
-from zope.component import getMultiAdapter
-from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
-from plone.transformchain.interfaces import ITransform
-from zope.component import adapts
-from zope.interface import implements
-from plone.dexterity.interfaces import IDexterityContent
-from plone.protect.auto import ProtectTransform
-from plone import api
 from AccessControl import getSecurityManager
-from collective.simplewiki.interfaces import WRAPPER_CLASSNAME, ISimpleWikiLayer
+from collective.simplewiki.interfaces import ISimpleWikiLayer
+from collective.simplewiki.interfaces import WRAPPER_CLASSNAME
+from lxml.html import fromstring
+from lxml.html import tostring
+from plone import api
+from plone.protect.auto import ProtectTransform
+from plone.transformchain.interfaces import ITransform
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
+from zope.component import adapts
+from zope.component import getMultiAdapter
+from zope.interface import implements
+from zope.interface import Interface
+
 import re
 
 

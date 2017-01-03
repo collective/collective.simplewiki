@@ -1,6 +1,6 @@
+from collective.simplewiki.interfaces import WRAPPER_CLASSNAME
 from plone.outputfilters.interfaces import IFilter
 from zope.interface import implements
-from collective.simplewiki.interfaces import WRAPPER_CLASSNAME
 
 
 class WikiFilter(object):

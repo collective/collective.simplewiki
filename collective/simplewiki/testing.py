@@ -1,11 +1,12 @@
-from plone.app.testing import TEST_USER_ID
-from Products.CMFCore.utils import getToolByName
-from plone.app.testing import setRoles
-from plone.app.testing import PloneSandboxLayer, PLONE_FIXTURE, \
-    IntegrationTesting
-from plone.testing import z2
-from zope.configuration import xmlconfig
 from plone.app.testing import applyProfile
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import PloneSandboxLayer
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.testing import z2
+from Products.CMFCore.utils import getToolByName
+from zope.configuration import xmlconfig
 
 
 class CollectiveSimpleWikiLayer(PloneSandboxLayer):

@@ -1,11 +1,11 @@
-from plone.app.testing import logout
-from plone.app.testing import TEST_USER_NAME
-from plone.app.testing import login
-from plone.app.textfield.value import RichTextValue
-import unittest
-from plone import api
 from collective.simplewiki.filter import WikiFilter
 from collective.simplewiki.testing import COLLECTIVE_SIMPLEWIKI_INTEGRATION_TESTING
+from plone import api
+from plone.app.testing import login
+from plone.app.testing import logout
+from plone.app.testing import TEST_USER_NAME
+
+import unittest
 
 
 class TestFilter(unittest.TestCase):
