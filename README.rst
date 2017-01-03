@@ -29,25 +29,36 @@ The text::
 
   Whatever you do, don't [[try this at home]]!
 
-  If in doubt, link to ((front-page)) or to ((front page)) or to [[Welcome!]] or [[Welcome]] or [[Welcome to Plone]].
+  If in doubt, link to ((front-page)) or to ((front page)).
+
+  You can also link to [[Welcome!]] or [[Welcome]] or [[Welcome to Plone]].
 
 is rendered as:
 
 .. code-block:: html
 
   <div class="simplewiki-container">
-    <p>This is a link to a 
-      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=test page&amp;form.widgets.IDublinCore.title=test page" title="Create missing content">+ test page</a>.
+    <p>This is a link to a
+      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=test page&amp;form.widgets.IDublinCore.title=test page" title="Create missing content">+ test page
+      </a>.
     </p>
-    <p>Whatever you do, don't 
-      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=try this at home&amp;form.widgets.IDublinCore.title=try this at home" title="Create missing content">+ try this at home</a>!
+    <p>Whatever you do, don't
+      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=try this at home&amp;form.widgets.IDublinCore.title=try this at home" title="Create missing content">+ try this at home
+      </a>!
     </p>
-    <p>If in doubt, link to 
-      <a href="http://localhost:8080/Wiki/front-page" title="Welcome to Plone">Welcome to Plone</a> or to 
-      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=front page&amp;form.widgets.IDublinCore.title=front page" title="Create missing content">+ front page</a> or to 
-      <a href="http://localhost:8080/Wiki/front-page" title="Welcome to Plone">Welcome to Plone</a> or 
-      <a href="http://localhost:8080/Wiki/front-page" title="Welcome to Plone">Welcome to Plone</a> or 
-      <a href="http://localhost:8080/Wiki/front-page" title="Welcome to Plone">Welcome to Plone</a>.
+    <p>If in doubt, link to
+      <a href="http://localhost:8080/Wiki/front-page" title="Welcome to Plone">Welcome to Plone
+      </a> or to
+      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=front page&amp;form.widgets.IDublinCore.title=front page" title="Create missing content">+ front page
+      </a>.
+    </p>
+    <p>You can also link to
+      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=Welcome!&amp;form.widgets.IDublinCore.title=Welcome!" title="Create missing content">+ Welcome!
+      </a> or
+      <a href="http://localhost:8080/Wiki/++add++Document?form.widgets.IShortName.id=Welcome&amp;form.widgets.IDublinCore.title=Welcome" title="Create missing content">+ Welcome
+      </a> or
+      <a href="http://localhost:8080/Wiki/front-page" title="Welcome to Plone">Welcome to Plone
+      </a>.
     </p>
   </div>
 
@@ -58,7 +69,7 @@ Comments:
 - `[[try this at home]]` links to an add form because no content item exists by that ID or title on the site.
 - `((front-page))` links to the site's default front page.
 - `((front page))` links to an add form because no content item exists by that ID or title on the site.
-- All these link to the site's default front page because they match by title: `[[Welcome!]]`, `[[Welcome]]`, `[[Welcome to Plone]]`
+- `[[Welcome!]]` and `[[Welcome]]` do not match any content item by ID nor by full title, but `[[Welcome to Plone]]` links to the default front page since its title matches fully.
   
 
 Acknowledgements
