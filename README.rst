@@ -75,7 +75,7 @@ Comments:
 Installation
 ------------
 
-Install collective.fancystuff by adding it to your buildout::
+Install collective.simplewiki by adding it to your buildout::
 
    [buildout]
 
