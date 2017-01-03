@@ -113,7 +113,7 @@ class WikiTransform(ProtectTransform):
                 'query': '/'.join(folder.getPhysicalPath()),
                 'depth': 1
             },
-            Title=name or id_,
+            sortable_title=(name or id_).lower(),
             sort_on="created",
             sort_order="reverse"
         )
