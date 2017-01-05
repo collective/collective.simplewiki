@@ -11,12 +11,32 @@ from zope.component import adapts
 from zope.component import getMultiAdapter
 from zope.interface import implements
 from zope.interface import Interface
+from Products.CMFPlone.utils import safe_unicode
+from plone.i18n.normalizer.base import mapUnicode
 
 import re
 
 
 PAREN_RE = re.compile(r'\(\(([\w\W]+?)\)\)')  # matches ((Some Text To link 123))
 BRACKET_RE = re.compile(r'\[\[([\w\W]+?)\]\]')  # matches [[Some Text To link 123]]
+NUM_SORT_REGEX = re.compile('\d+')
+MAX_SORTABLE_TITLE = 40
+
+
+def zero_fill(matchobj):
+    return matchobj.group().zfill(4)
+
+
+def get_sortable_title(title):
+    sortabletitle = mapUnicode(safe_unicode(title)).lower().strip()
+    # Replace numbers with zero filled numbers
+    sortabletitle = NUM_SORT_REGEX.sub(zero_fill, sortabletitle)
+    # Truncate to prevent bloat, take bits from start and end
+    if len(sortabletitle) > MAX_SORTABLE_TITLE:
+        start = sortabletitle[:(MAX_SORTABLE_TITLE - 13)]
+        end = sortabletitle[-10:]
+        sortabletitle = start + '...' + end
+    return sortabletitle.encode('utf-8')
 
 
 class WikiTransform(ProtectTransform):
@@ -109,12 +129,13 @@ class WikiTransform(ProtectTransform):
             ob = folder[id_]
             return self.make_link(ob, name)
 
+        sortable_title = get_sortable_title(name or id_)
         brains = self.catalog(
             path={
                 'query': '/'.join(folder.getPhysicalPath()),
                 'depth': 1
             },
-            sortable_title=(name or id_).lower(),
+            sortable_title=sortable_title,
             sort_on="created",
             sort_order="reverse"
         )
@@ -125,7 +146,7 @@ class WikiTransform(ProtectTransform):
         if len(brains) > 0:
             return self.make_link(brains[0].getObject(), name)
 
-        brains = self.catalog(sortable_title=(name or id_).lower(),
+        brains = self.catalog(sortable_title=sortable_title,
                               sort_on="created", sort_order="reverse")
         if len(brains) > 0:
             return self.make_link(brains[0].getObject(), name)
