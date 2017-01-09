@@ -4,15 +4,15 @@ from collective.simplewiki.interfaces import WRAPPER_CLASSNAME
 from lxml.html import fromstring
 from lxml.html import tostring
 from plone import api
+from plone.i18n.normalizer.base import mapUnicode
 from plone.protect.auto import ProtectTransform
 from plone.transformchain.interfaces import ITransform
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
+from Products.CMFPlone.utils import safe_unicode
 from zope.component import adapts
 from zope.component import getMultiAdapter
 from zope.interface import implements
 from zope.interface import Interface
-from Products.CMFPlone.utils import safe_unicode
-from plone.i18n.normalizer.base import mapUnicode
 
 import re
 
